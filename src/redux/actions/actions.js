@@ -1,4 +1,4 @@
-const endpoint= "https://api.openweathermap.org/data/2.5/weather?appid=b294f8ea07c98ad5616a05a7fa4e6811&units=metric&q="
+const CurrentWeather= "https://api.openweathermap.org/data/2.5/weather?appid=b294f8ea07c98ad5616a05a7fa4e6811&units=metric&q="
 export const FETCH_CURRENT_WEATHER = 'FETCH_CURRENT_WEATHER';
 
 export const fetchCurrentWeather = (query) => {
@@ -15,7 +15,7 @@ export const fetchCurrentWeather = (query) => {
     }
     else{
         try {
-            let resp = await fetch(`${endpoint}${query}`)
+            let resp = await fetch(`${CurrentWeather}${query}`)
             if (resp.ok) {
               let search = await resp.json()
               console.log(search)
